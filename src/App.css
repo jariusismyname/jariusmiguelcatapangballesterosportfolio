@@ -1,0 +1,75 @@
+:root {
+  --bg: #121212;
+  --bg-alt: #1e1e1e;
+  --text: #eee;
+  --highlight: #4fc3f7;
+  --btn-bg-hover: #0288d1;
+  --card-bg: #242424;
+  --shadow: rgba(0, 0, 0, 0.7);
+}
+
+html.dark {
+  --bg: #121212;
+  --bg-alt: #1e1e1e;
+  --text: #eee;
+  --highlight: #4fc3f7;
+  --btn-bg-hover: #0288d1;
+  --card-bg: #242424;
+  --shadow: rgba(0, 0, 0, 0.7);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 60px; /* Space for fixed header */
+  scroll-padding-top: 60px;
+}
+
+/* Scroll animations: hidden by default */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When active: visible and in place */
+.scroll-hidden.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons shared style */
+.btn {
+  display: inline-block;
+  background-color: var(--highlight);
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--btn-bg-hover);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    padding-top: 70px;
+  }
+}

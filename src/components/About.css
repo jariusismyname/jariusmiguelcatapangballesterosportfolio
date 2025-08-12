@@ -1,0 +1,24 @@
+.about-section {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  color: var(--text);
+  padding: 0 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: var(--highlight);
+}
+
+.about-content p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  user-select: text;
+  background: var(--card-bg);
+  padding: 25px 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px var(--shadow);
+}

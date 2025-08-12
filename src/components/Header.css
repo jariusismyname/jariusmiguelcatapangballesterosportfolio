@@ -1,0 +1,84 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-alt);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  z-index: 9999;
+  user-select: none;
+}
+
+.header-scrolled {
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--highlight);
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--highlight);
+  outline: none;
+}
+
+.dark-mode-toggle {
+  background: var(--highlight);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover,
+.dark-mode-toggle:focus {
+  background-color: var(--btn-bg-hover);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  /* For brevity, mobile nav menu toggle can be added later if needed */
+}
