@@ -21,4 +21,5 @@
   padding: 25px 30px;
   border-radius: 18px;
   box-shadow: 0 6px 20px var(--shadow);
+  text-align: justify; /* ✅ Correct way */
 }

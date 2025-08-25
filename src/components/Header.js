@@ -4,8 +4,8 @@ import './Header.css';
 export default function Header() {
   const [darkMode, setDarkMode] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Toggle dark mode and persist in localStorage
   useEffect(() => {
     if (darkMode) {
       document.documentElement.style.setProperty('--bg', '#121212');
@@ -26,7 +26,6 @@ export default function Header() {
     }
   }, [darkMode]);
 
-  // Add shadow on scroll for header
   useEffect(() => {
     function onScroll() {
       setIsScrolled(window.scrollY > 20);
@@ -35,7 +34,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Smooth scroll handler
   const handleNavClick = e => {
     e.preventDefault();
     const targetId = e.currentTarget.getAttribute('href').substring(1);
@@ -43,28 +41,43 @@ export default function Header() {
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
+    setMenuOpen(false); // close menu after click
   };
 
   return (
     <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <nav className="nav-container">
         <a href="#hero" className="logo" onClick={handleNavClick}>
-          Jarius Miguel The Web Developer
+          Jarius Miguel Ballesteros The Developer
         </a>
-        <ul className="nav-links">
+
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><a href="#projects" onClick={handleNavClick}>Projects</a></li>
           <li><a href="#about" onClick={handleNavClick}>About</a></li>
           <li><a href="#skills" onClick={handleNavClick}>Skills</a></li>
           <li><a href="#extras" onClick={handleNavClick}>Extras</a></li>
           <li><a href="#contact" onClick={handleNavClick}>Contact</a></li>
         </ul>
-        <button
-          className="dark-mode-toggle"
-          aria-label="Toggle dark mode"
-          onClick={() => setDarkMode(prev => !prev)}
-        >
-          {darkMode ? '☀️' : '🌙'}
-        </button>
+
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <button
+            className="dark-mode-toggle"
+            aria-label="Toggle dark mode"
+            onClick={() => setDarkMode(prev => !prev)}
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+
+          <button
+            className={`hamburger ${menuOpen ? 'active' : ''}`}
+            onClick={() => setMenuOpen(prev => !prev)}
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
     </header>
   );

@@ -1,7 +1,7 @@
 .skills-section {
   max-width: 1100px;
-  margin: 0 auto 80px;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 0 20px 100px; /* ⬅ added bottom padding */
   color: var(--text);
 }
 
@@ -15,9 +15,8 @@
 
 .skills-container {
   display: flex;
-  gap: 35px;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 20px;
 }
 
 .skill-card {
@@ -29,7 +28,13 @@
   text-align: center;
   cursor: default;
   transition: transform 0.3s ease;
+
+  /* Debug styles */
+  color: white !important;        /* force visible text */
+  opacity: 1 !important;          /* override hidden states */
+  transform: none !important;     /* reset scroll effect */
 }
+
 
 .skill-card:hover {
   transform: translateY(-6px);
@@ -63,6 +68,11 @@
   }
 
   .skill-card {
-    width: 100%;
+    width: 90%;
+  }
+}
+@media (max-width: 900px) {
+  .skills-section {
+    padding-bottom: 120px; /* more room for scroll */
   }
 }

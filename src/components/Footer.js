@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
 
 export default function Footer() {
@@ -9,14 +9,19 @@ export default function Footer() {
         {/* About */}
         <div className="footer-column">
           <h3>About Me</h3>
-          <p>
-            Jarius Miguel C. Ballesteros – a dedicated Web Developer specializing in React and MERN stack. Passionate about building scalable and performant web applications.
-          </p>
+         <p>
+  I am Jarius Miguel C. Ballesteros, a fresh graduate with a strong interest in software development and web technologies. 
+  My experience includes building responsive and user-friendly applications using HTML, CSS, JavaScript, and frameworks like React and Angular. 
+  I have also developed projects such as an Artist Portfolio and a Data Analyst Portfolio, which highlight my skills in UI design, interactivity, and data presentation. 
+  Alongside development, I value clean code, testing, and collaboration, making me adaptable to both development and quality assurance roles. 
+  I am eager to continue learning, contribute to meaningful projects, and grow as a professional in the tech industry.
+</p>
+
         </div>
 
         {/* Quick Links */}
         <div className="footer-column">
-          <h3>Quick Links</h3>
+          <div className="links"> <h3>Quick Links</h3>
           <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -26,15 +31,15 @@ export default function Footer() {
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
+        </div>
 
         {/* Social Media */}
         <div className="footer-column">
           <h3>Connect</h3>
           <div className="footer-social-icons">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
-            <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
-            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter /></a>
-            <a href="mailto:jarius.m.ballesteros@example.com" aria-label="Email"><FaEnvelope /></a>
+            <a href="https://www.linkedin.com/in/jarius-miguel-ballesteros-4b7a43277/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+            <a href="https://github.com/jariusismyname" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a href="mailto:jmjmjmj160@gmail.com" aria-label="Email"><FaEnvelope /></a>
           </div>
         </div>
       </div>
